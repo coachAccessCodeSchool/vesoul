@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-    <h1>HomePage</h1>
+    <h1>Vesoul edition</h1>
 
+    {% for book in books %}
+        <li>{{ book.title }}</li>
+    {% endfor %}
 {% endblock %}
