@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}{% block title %}Créer un compte{% endblock %}
+{% block body %}
+{% for message in app.flashes('success') %}<div class="alert alert-success">{{ message }}</div>{% endfor %}
+<div class="container mt-5 col-md-6">
+    <div class="m-auto">
+        <div class="card card-body">
+            {{ form_start(form) }}
+            <div class="text-center">
+                <h4 class="pt-3 mt-5">Vesoul Edition</h4>
+                <div class="form-group">
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.password) }}
+                    {{ form_row(form.firstname) }}
+                    {{ form_row(form.lastname) }}
+                </div>
+                <button class="btn btn-primary" type="submit">Créer mon compte</button>
+                <p class="mt-4 mb-4"><a href="{{ path('login') }}"> J'ai déjà un compte </a></p>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
